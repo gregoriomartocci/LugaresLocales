@@ -62,6 +62,12 @@ export default function Navbar() {
                   Experiencias
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                  Tendencias
+                </Link>
+              </li>
             </ul>
           </div>
           {button && <Button buttonStyle="btn--outline">Ingresar</Button>}
