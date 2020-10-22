@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
-import './Navbar.css'
+import "./Navbar.css";
 
 export default function Navbar() {
   const [click, setClick] = useState(false);
@@ -18,9 +18,9 @@ export default function Navbar() {
     }
   };
 
-  useEffect(() =>{
-    showButton()
-  }, [])
+  useEffect(() => {
+    showButton();
+  }, []);
 
   window.addEventListener("resize", showButton);
 
@@ -37,7 +37,7 @@ export default function Navbar() {
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
+                Quienes somos?
               </Link>
             </li>
             <li className="nav-item">
@@ -46,16 +46,26 @@ export default function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Services
+                Destacados
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Quienes somos?
+                Lugares
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                Experiencias
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                Tendencias
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">Sign Up</Button>}
+          {button && <Button buttonStyle="btn--outline">Ingresar</Button>}
         </div>
       </nav>
     </>
