@@ -28,43 +28,42 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            Lugares Locales
-          </Link>
+          <div className="Logo">
+            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+              Lugares Locales
+            </Link>
+          </div>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Quienes somos?
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/services"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Destacados
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Lugares
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Experiencias
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Tendencias
-              </Link>
-            </li>
-          </ul>
+          <div className="menu">
+            <ul className={click ? "nav-menu active" : "nav-menu"}>
+              <li className="nav-item">
+                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                  Quienes somos?
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/services"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  Destacados
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                  Lugares
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                  Experiencias
+                </Link>
+              </li>
+            </ul>
+          </div>
           {button && <Button buttonStyle="btn--outline">Ingresar</Button>}
         </div>
       </nav>
