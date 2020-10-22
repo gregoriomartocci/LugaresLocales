@@ -16,6 +16,13 @@ export default function LandingSection() {
         >
           Empecemos!
         </Button>
+        <Button
+          className="btns"
+          buttonStyle="btn--primary"
+          buttonStyle="btn--large"
+        >
+          Otro item
+        </Button>
       </div>
     </div>
   );
