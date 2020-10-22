@@ -1,21 +1,45 @@
-import React from "react";
-import CardItem from "./CardItem";
-import "./Cards.css";
+import React from 'react';
+import './Cards.css';
+import CardItem from './CardItem';
 
-export default function Cards() {
+function Cards() {
   return (
-    <div className="cards">
-      <h1>Check Out these EPIC Destinations!</h1>
-      <div className="cards__wrapper">
-        <ul className="card__items">
-          <CardItem
-            src="images/img"
-            text="Descubri tal cosa"
-            label="Categoria"
-            path="/services"
-          />
-        </ul>
+    <div className='cards'>
+      <h1>Los Lugares Mas Chetos!</h1>
+      <div className='cards__container'>
+        <div className='cards__wrapper'>
+          <ul className='cards__items'>
+            <CardItem
+              src='images/PATAGONIA 521.jpg'
+              text='El sur esta re cheto'
+              label='Adventure'
+              path='/services'
+            />
+            <CardItem
+              src='images/PATAGONIA 354.jpg'
+              text='Con ese Glaciar las vas a re flashar'
+              label='Luxury'
+              path='/services'
+            />
+          </ul>
+          <ul className='cards__items'>
+            <CardItem
+              src='images/PATAGONIA 853.jpg'
+              text='Casitas con techo rosa me vuelvo loco'
+              label='Mystery'
+              path='/services'
+            />
+            <CardItem
+              src='images/PATAGONIA 921.jpg'
+              text='KETA PASANDO'
+              label='Adventure'
+              path='/products'
+            />
+          </ul>
+        </div>
       </div>
     </div>
   );
 }
+
+export default Cards;
