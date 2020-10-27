@@ -39,13 +39,17 @@ export default function Navbar() {
           <div className="menu">
             <ul className={click ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link
+                  to="/about-us"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   Quienes somos?
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="/services"
+                  to="/highlights"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
@@ -53,24 +57,30 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link to="/places" className="nav-links" onClick={closeMobileMenu}>
                   Lugares
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link to="/experiences" className="nav-links" onClick={closeMobileMenu}>
                   Experiencias
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link to="/tendencies" className="nav-links" onClick={closeMobileMenu}>
                   Tendencias
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                  {button && (
+                    <Button buttonStyle="btn--outline">Ingresar</Button>
+                  )}
                 </Link>
               </li>
             </ul>
           </div>
-          {button && <Button buttonStyle="btn--outline">Ingresar</Button>}
         </div>
       </nav>
     </>
