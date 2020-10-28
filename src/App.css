@@ -9,7 +9,7 @@
   .about-us,
   .highlights,
   .places,
-  .tendencies
+  .tendencies,
   .experiences {
     display: flex;
     height: 90vh;
@@ -46,7 +46,7 @@
   }
 
   .tendencies {
-    background-image: url('/lugares__locales/public/images/PATAGONIA\ 206.jpg');
+    background-image: url('/images/PATAGONIA\ 266.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -55,7 +55,7 @@
   }
 
   .experiences {
-    background-image: url('/lugares__locales/public/images/PATAGONIA\ 869.jpg');
+    background-image: url('/images/PATAGONIA\ 919.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
