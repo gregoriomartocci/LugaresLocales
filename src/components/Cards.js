@@ -13,13 +13,19 @@ function Cards() {
               src='images/PATAGONIA 521.jpg'
               text='El sur esta re cheto'
               label='Adventure'
-              path='/services'
+              path='/'
             />
             <CardItem
               src='images/PATAGONIA 354.jpg'
               text='Con ese Glaciar las vas a re flashar'
               label='Luxury'
-              path='/services'
+              path='/'
+            />
+            <CardItem
+              src='images/PATAGONIA 354.jpg'
+              text='Con ese Glaciar las vas a re flashar'
+              label='Luxury'
+              path='/'
             />
           </ul>
           <ul className='cards__items'>
@@ -27,13 +33,19 @@ function Cards() {
               src='images/PATAGONIA 853.jpg'
               text='Casitas con techo rosa me vuelvo loco'
               label='Mystery'
-              path='/services'
+              path='/'
             />
             <CardItem
               src='images/PATAGONIA 921.jpg'
               text='KETA PASANDO'
               label='Adventure'
-              path='/products'
+              path='/'
+            />
+            <CardItem
+              src='images/PATAGONIA 921.jpg'
+              text='KETA PASANDO'
+              label='Adventure'
+              path='/'
             />
           </ul>
         </div>
