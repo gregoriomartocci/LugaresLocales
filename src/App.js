@@ -9,6 +9,7 @@ import Places from "./components/pages/Places";
 import Tendencies from "./components/pages/Tendencies";
 import Experiences from "./components/pages/Experiences";
 
+
 function App() {
   return (
     <>
