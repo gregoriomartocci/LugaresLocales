@@ -1,0 +1,133 @@
+:root {
+  --bg: #fff;
+  --bg-accent: #dadce1;
+  --text-color: #48414d;
+  --nav-size: 100px;
+  --border: 1px solid #bdbdbd;
+  --border-radius: 8px;
+  --speed: 500ms;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navbar {
+  height: var(--nav-size);
+  width: 100%;
+  background-color: var(--bg);
+  padding: 0 1rem;
+  border-bottom: var(--border);
+}
+
+.navbar-nav {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-item {
+  width: calc(var(--nav-size) * 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center__menu__item {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #757575;
+}
+
+.navbar__logo {
+  width: calc(var(--nav-size) * 0.8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon-button {
+  --button-size: calc(var(--nav-size) * 0.3);
+  width: var(--button-size);
+  height: var(--button-size);
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}
+
+icon-button:hover {
+  filter: brightness(1.2);
+}
+
+.icon-button svg {
+  fill: var(--text-color);
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 80px;
+  width: 300px;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  border: var(--border);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.search__dropdown {
+  position: absolute;
+  top: 80px;
+  width: 300px;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  border: var(--border);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5;
+}
+
+.menu-item:hover {
+  background-color: #e0e0e0;
+}
+
+.icon-right {
+  margin-left: auto;
+}
+
+.search__dropdown__input {
+  width: 100%;
+  height: 60px;
+  padding: 15px;
+  border: 1px #9e9e9e solid;
+}
+
+.search__dropdown__button {
+  margin-top: 0;
+}
+

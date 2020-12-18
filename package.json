@@ -1,0 +1,18 @@
+{
+  "name": "blog-strapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "dependencies": {
+    "graphql": "^15.4.0",
+    "strapi": "^3.3.4",
+    "strapi-plugin-graphql": "^3.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
