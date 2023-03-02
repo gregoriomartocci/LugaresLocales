@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import typeOrmConfig from 'config/ormconfig';
 import { ArticleModule } from './articles/article.module';
-import { CategoryModule } from './categories/category.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
