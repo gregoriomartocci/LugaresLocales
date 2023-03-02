@@ -9,11 +9,11 @@ import {
 } from '@nestjs/common';
 import { ArticleDto } from './article.dto';
 import { Article } from './article.entity';
-import { ArticlesService } from './articles.service';
+import { ArticleService } from './article.service';
 
-@Controller('articles')
-export class ArticlesController {
-  constructor(private readonly articlesService: ArticlesService) {}
+@Controller('article')
+export class ArticleController {
+  constructor(private readonly articlesService: ArticleService) {}
 
   @Get()
   findAll(): Promise<Article[]> {

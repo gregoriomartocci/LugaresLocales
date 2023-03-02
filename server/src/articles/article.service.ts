@@ -5,7 +5,7 @@ import { ArticleDto } from './article.dto';
 import { Article } from './article.entity';
 
 @Injectable()
-export class ArticlesService {
+export class ArticleService {
   constructor(
     @InjectRepository(Article)
     private articlesRepository: Repository<Article>,
