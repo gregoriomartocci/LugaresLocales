@@ -1,8 +1,11 @@
-import { Controller, Get, Req, UseGuards } from "@nestjs/common";
+import { Controller, Get, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { AuthService } from "./auth.service";
+import { AuthService } from './auth.service';
 import { Request } from 'express';
 
+interface AuthRequest extends Request {
+  user?: any;
+}
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -15,7 +18,7 @@ export class AuthController {
 
   @Get('google/callback')
   @UseGuards(AuthGuard('google'))
-  async googleLoginCallback(@Req() req: Request): Promise<any> {
+  async googleLoginCallback(@Req() req: AuthRequest): Promise<any> {
     // Esta ruta maneja el callback de Google y retorna el token JWT al usuario.
     return this.authService.login(req.user);
   }
