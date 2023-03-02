@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - 4000:4000
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: lugareslocales
+      POSTGRES_DB: lugareslocales
+      POSTGRES_USER: lugareslocales
+    ports:
+      - 5432:5432
