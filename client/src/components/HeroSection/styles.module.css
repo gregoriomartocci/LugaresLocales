@@ -1,5 +1,45 @@
-.container {
-  height: 150vh;
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
   width: 100vw;
-  background-color: red;
+  object-fit: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 80px;
+  height: calc(100vh - 80px);
+  width: 100vw;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contentLeft,
+.contentRight {
+  width: 50%;
+  text-align: center;
+}
+
+.contentLeft h1 {
+  margin: 0;
+}
+
+.contentRight p {
+  margin: 0;
 }
