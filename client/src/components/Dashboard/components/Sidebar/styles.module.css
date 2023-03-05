@@ -26,10 +26,13 @@
   color: #848688 !important;
 }
 
-.menuItem:hover {
+.menuItem:hover,
+.menuItem:hover svg {
   color: #bfc1c2 !important;
 }
 
-.menuItem:hover svg {
-  color: #bfc1c2 !important;
+.selected,
+.selected svg {
+  color: #fff !important;
+  font-weight: 600 !important;
 }
