@@ -98,6 +98,21 @@ a {
   display: none;
 }
 
+/* Set the font family for Material UI elements */
+.MuiTypography-root,
+.MuiInputLabel-root,
+.MuiFormLabel-root,
+.MuiInputBase-root,
+.MuiInput-root,
+.MuiTableCell-root,
+.MuiTablePagination-root {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.MuiListItemIcon-root {
+  min-width: 40px !important;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

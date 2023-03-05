@@ -57,7 +57,7 @@ const Navbar = ({ handleDrawerOpen }: Props) => {
                         aria-describedby={id}
                         onClick={handleClick}
                     >
-                        <Badge badgeContent={3} color="secondary">
+                        <Badge badgeContent={3} color="secondary" overlap="rectangular">
                             <NotificationsIcon />
                         </Badge>
                     </IconButton>

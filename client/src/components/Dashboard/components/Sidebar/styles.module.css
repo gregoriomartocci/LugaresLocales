@@ -4,7 +4,7 @@
   left: -200px;
   display: flex;
   flex-direction: column;
-  background-color: #f5f5f5;
+  background-color: #1a1c1e;
   height: 100%;
   width: 200px;
   z-index: 1500;
@@ -23,8 +23,13 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  color: #848688 !important;
 }
 
 .menuItem:hover {
-  background-color: #e0e0e0;
+  color: #bfc1c2 !important;
+}
+
+.menuItem:hover svg {
+  color: #bfc1c2 !important;
 }

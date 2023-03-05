@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: #f2f4f5 !important;
+  background-color: #F7F7F7 !important;
   height: calc(100vh - 65px);
   width: 100%;
   z-index: 5000;
