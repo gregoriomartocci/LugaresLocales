@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import typeOrmConfig from 'config/ormconfig';
-import { ArticleModule } from './articles/article.module';
-import { CategoryModule } from './category/category.module';
+import { ArticleModule } from './articles/articles.module';
+import { CategoryModule } from './categories/categories.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({

@@ -13,16 +13,21 @@ import {
     TablePagination,
     TableFooter,
 } from "@material-ui/core";
+import { Article } from "../../../../interfaces";
 
 interface Data {
-    id: number;
-    name: string;
-    description: string;
-    category: string;
+    id?: number;
+    name?: string;
+    description?: string;
+    category?: string;
+    author?: string;
+    date: string;
 }
 
+type TableData = Data | Article;
+
 interface Props {
-    data: Data[];
+    data: TableData[];
     columns: {
         id: keyof Data;
         label: string;
@@ -50,7 +55,7 @@ const DynamicTable = ({ data, columns, pagination = true }: Props) => {
     };
 
     const filteredData = data.filter((data) =>
-        data.name.toLowerCase().includes(search.toLowerCase())
+        'name' in data && data?.name && data?.name.toLowerCase().includes(search.toLowerCase())
     );
 
     const sortedData = filteredData.sort((a, b) => {

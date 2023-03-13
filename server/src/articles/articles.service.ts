@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ArticleDto } from './article.dto';
-import { Article } from './article.entity';
+import { ArticleDto } from './articles.dto';
+import { Article } from './articles.entity';
 
 @Injectable()
 export class ArticleService {
@@ -24,6 +24,7 @@ export class ArticleService {
     article.title = ArticleDto.title;
     article.description = ArticleDto.description;
     article.body = ArticleDto.body;
+    article.author = ArticleDto.author;
     article.date = new Date();
     return this.articlesRepository.save(article);
   }
@@ -33,6 +34,7 @@ export class ArticleService {
     article.title = ArticleDto.title || article.title;
     article.description = ArticleDto.description || article.description;
     article.body = ArticleDto.body;
+    article.author = ArticleDto.author;
     return this.articlesRepository.save(article);
   }
 

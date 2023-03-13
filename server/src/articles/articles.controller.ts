@@ -7,11 +7,11 @@ import {
   Body,
   Param,
 } from '@nestjs/common';
-import { ArticleDto } from './article.dto';
-import { Article } from './article.entity';
-import { ArticleService } from './article.service';
+import { ArticleDto } from './articles.dto';
+import { Article } from './articles.entity';
+import { ArticleService } from './articles.service';
 
-@Controller('article')
+@Controller('articles')
 export class ArticleController {
   constructor(private readonly articlesService: ArticleService) {}
 

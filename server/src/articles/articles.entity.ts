@@ -17,4 +17,7 @@ export class Article {
 
   @Column()
   date: Date;
+
+  @Column()
+  author: string;
 }

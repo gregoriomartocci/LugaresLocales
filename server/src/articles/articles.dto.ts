@@ -4,4 +4,5 @@ export class ArticleDto {
   description: string;
   date: Date;
   body: string;
+  author: string;
 }

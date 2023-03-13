@@ -1,13 +1,15 @@
-import { configureStore } from "@reduxjs/toolkit";
-import articlesReducer from "./articles/reducers";
-import { useDispatch } from "react-redux";
+import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query';
+import { articlesApi } from '../features/articles/api';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
-    articles: articlesReducer,
+    [articlesApi.reducerPath]: articlesApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(articlesApi.middleware),
 });
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
-export const useAppDispatch = () => useDispatch<AppDispatch>();
+setupListeners(store.dispatch);
+
+export default store;

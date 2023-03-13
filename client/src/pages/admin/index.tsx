@@ -1,6 +1,15 @@
 import React from 'react';
-import Dashboard from '../../components/Dashboard';
-import DynamicTable from '../../components/Dashboard/components/DynamicTable';
+import dynamic from 'next/dynamic';
+
+const Dashboard = dynamic(
+    () => import('../../components/Dashboard'),
+    { ssr: false }
+);
+const DynamicTable = dynamic(
+    () => import('../../components/Dashboard/components/DynamicTable'),
+    { ssr: false }
+);
+
 
 interface Data {
     id: number;
