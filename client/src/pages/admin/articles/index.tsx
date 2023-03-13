@@ -5,7 +5,6 @@ import { useGetArticlesQuery } from '../../../features/articles/api';
 
 interface Data {
     id: number;
-    name: string;
     author: string;
     description: string;
     category: string;

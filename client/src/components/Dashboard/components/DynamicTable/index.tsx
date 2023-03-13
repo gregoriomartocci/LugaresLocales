@@ -8,23 +8,37 @@ import {
     TableRow,
     TableSortLabel,
     TextField,
-    InputAdornment,
     Paper,
     TablePagination,
     TableFooter,
+    IconButton,
+    Button,
+    Menu,
+    MenuItem,
 } from "@material-ui/core";
 import { Article } from "../../../../interfaces";
+import SearchIcon from '@material-ui/icons/Search';
+import { AddCircleOutline, MoreVert, Edit, Delete } from "@material-ui/icons";
 
-interface Data {
+interface Data extends Article {
     id?: number;
     name?: string;
-    description?: string;
+    description: string;
     category?: string;
     author?: string;
     date: string;
 }
 
-type TableData = Data | Article;
+type TableData = {
+    id?: number;
+    name?: string;
+    description: string;
+    category?: string;
+    author?: string;
+    date: string;
+    body?: string
+    title?: string
+};
 
 interface Props {
     data: TableData[];
@@ -43,6 +57,16 @@ const DynamicTable = ({ data, columns, pagination = true }: Props) => {
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
+
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     const handleSort = (property: keyof Data) => {
         const isAsc = orderBy === property && order === "asc";
@@ -91,21 +115,38 @@ const DynamicTable = ({ data, columns, pagination = true }: Props) => {
 
     return (
         <div>
-            <TextField
-                label={columns[0].label}
-                variant="outlined"
-                margin="normal"
-                size="small"
-                value={search}
-                onChange={handleSearch}
-                InputProps={{
-                    endAdornment: (
-                        <InputAdornment position="end">
-                            <i className="material-icons">search</i>
-                        </InputAdornment>
-                    ),
-                }}
-            />
+            <div style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <TextField
+                    label={columns[0].label}
+                    style={{ borderRadius: "50px" }}
+                    variant="outlined"
+                    margin="normal"
+                    size="small"
+                    value={search}
+                    onChange={handleSearch}
+                    InputProps={{
+                        endAdornment: (
+                            <IconButton>
+                                <SearchIcon />
+                            </IconButton>
+                        ),
+                    }}
+                />
+
+                <Button
+                    variant="contained"
+                    startIcon={<AddCircleOutline />}
+                    style={{
+                        borderRadius: 5,
+                        backgroundColor: "#1a1c1e",
+                        color: "#fff",
+                        fontFamily: "Poppins !important",
+                        textTransform: "lowercase"
+                    }}
+                >
+                    Crear
+                </Button>
+            </div>
             <TableContainer
                 component={Paper}
                 style={{
@@ -134,6 +175,7 @@ const DynamicTable = ({ data, columns, pagination = true }: Props) => {
                                     </TableSortLabel>
                                 </TableCell>
                             ))}
+                            <TableCell>Actions</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -158,6 +200,18 @@ const DynamicTable = ({ data, columns, pagination = true }: Props) => {
                                     {columns.map((column, columnIndex) => (
                                         <TableCell key={columnIndex}>{row[column.id]}</TableCell>
                                     ))}
+                                    <TableCell>
+                                        <MoreVert onClick={handleClick} />
+                                        <Menu
+                                            anchorEl={anchorEl}
+                                            keepMounted
+                                            open={Boolean(anchorEl)}
+                                            onClose={handleClose}
+                                        >
+                                            <MenuItem onClick={handleClose}><Edit /> Editar</MenuItem>
+                                            <MenuItem onClick={handleClose}><Delete /> Eliminar</MenuItem>
+                                        </Menu>
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         {emptyRows > 0 && (
